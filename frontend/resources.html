@@ -1,0 +1,119 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>IBU Study-Hub | Resources</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - Diğer sayfalarla aynı navbar -->
+    <nav class="navbar">
+        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo -->
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li> <!-- Dashboard sayfasına gider -->
+            <li><a href="resources.html">Resources</a></li> <!-- Şu an bu sayfadayız -->
+            <li><a href="upload.html">Upload</a></li> <!-- Yükleme sayfasına gider -->
+            <li><a href="index.html" class="btn-logout">Logout</a></li> <!-- Çıkış yapar -->
+        </ul>
+    </nav>
+
+    <!-- SAYFA BAŞLIĞI -->
+    <section class="resources-header"> <!-- Üst başlık bölümü -->
+        <h1>All Resources</h1> <!-- Sayfa başlığı -->
+        <p>Browse and search all uploaded study materials</p> <!-- Alt açıklama -->
+    </section>
+
+    <!-- ARAMA VE FİLTRE BÖLÜMÜ -->
+    <section class="search-filter-section"> <!-- Arama ve filtre bölümü -->
+        <div class="search-filter-bar"> <!-- Arama ve filtreyi yan yana tutar -->
+            <input type="text" id="searchInput" placeholder="Search by title, course code or professor..." class="search-input"> <!-- Arama kutusu -->
+            <select id="filterType" class="filter-select"> <!-- Materyal türüne göre filtreler -->
+                <option value="all">All Types</option> <!-- Tüm türler -->
+                <option value="notes">Notes</option> <!-- Sadece notlar -->
+                <option value="exam">Past Exams</option> <!-- Sadece sınavlar -->
+                <option value="slides">Slides</option> <!-- Sadece slaytlar -->
+                <option value="book">Resources</option> <!-- Sadece kaynaklar -->
+            </select>
+        </div>
+    </section>
+
+    <!-- MATERYAL KARTLARI - Tüm materyaller -->
+    <section class="resources-section">
+        <div class="cards-grid" id="resourcesGrid"> <!-- Kartları grid'de gösterir, jQuery ile filtrelenecek -->
+
+            <!-- 1. Kart -->
+            <div class="card" data-type="notes"> <!-- data-type ile jQuery filtrelemesi yapılacak -->
+                <span class="badge badge-notes">Notes</span>
+                <h3>Data Structures — Lecture 5</h3>
+                <p>CS201 · Dr. Yilmaz</p>
+                <div class="card-footer">
+                    <span>Ahmed K.</span>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+
+            <!-- 2. Kart -->
+            <div class="card" data-type="exam">
+                <span class="badge badge-exam">Past Exam</span>
+                <h3>Mathematics II — Final 2023</h3>
+                <p>MATH102 · Dr. Ozturk</p>
+                <div class="card-footer">
+                    <span>Selin B.</span>
+                    <span>4 days ago</span>
+                </div>
+            </div>
+
+            <!-- 3. Kart -->
+            <div class="card" data-type="slides">
+                <span class="badge badge-slides">Slides</span>
+                <h3>Intro to Business — Week 3</h3>
+                <p>BUS101 · Dr. Celik</p>
+                <div class="card-footer">
+                    <span>Mert E.</span>
+                    <span>1 week ago</span>
+                </div>
+            </div>
+
+            <!-- 4. Kart -->
+            <div class="card" data-type="book">
+                <span class="badge badge-book">Resource</span>
+                <h3>Algorithm Analysis — Solved Problems</h3>
+                <p>CS301 · Dr. Kaya</p>
+                <div class="card-footer">
+                    <span>Zehra D.</span>
+                    <span>1 week ago</span>
+                </div>
+            </div>
+
+            <!-- 5. Kart -->
+            <div class="card" data-type="notes">
+                <span class="badge badge-notes">Notes</span>
+                <h3>Operating Systems — Week 7</h3>
+                <p>CS302 · Dr. Arslan</p>
+                <div class="card-footer">
+                    <span>Burak T.</span>
+                    <span>2 weeks ago</span>
+                </div>
+            </div>
+
+            <!-- 6. Kart -->
+            <div class="card" data-type="exam">
+                <span class="badge badge-exam">Past Exam</span>
+                <h3>Physics I — Midterm 2022</h3>
+                <p>PHYS101 · Dr. Demir</p>
+                <div class="card-footer">
+                    <span>Ayse K.</span>
+                    <span>2 weeks ago</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - Sayfa yüklendikten sonra çalışsın diye en alta -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
+    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+</body>
+</html>

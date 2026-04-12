@@ -1,0 +1,469 @@
+/* Tüm elementlerin margin ve padding'ini sıfırlar, box-sizing'i düzenler */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sayfanın genel font ve renk ayarları */
+body {
+    font-family: Arial, sans-serif; /* Genel yazı tipi */
+    color: #333; /* Genel yazı rengi */
+    background-color: #f9f9f9; /* Sayfa arka plan rengi */
+}
+
+/* NAVBAR - Üst navigasyon çubuğu stilleri */
+.navbar {
+    display: flex; /* Elemanları yan yana dizer */
+    justify-content: space-between; /* Logo sola, linkler sağa */
+    align-items: center; /* Dikeyde ortalar */
+    padding: 16px 40px; /* İç boşluk */
+    background-color: #fff; /* Beyaz arka plan */
+    border-bottom: 1px solid #eee; /* Alt çizgi */
+}
+
+/* Logo yazısının stili */
+.logo {
+    font-size: 20px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    color: #1D9E75; /* Yeşil renk */
+}
+
+/* Navigasyon linklerinin listesi */
+.nav-links {
+    list-style: none; /* Madde işaretlerini kaldırır */
+    display: flex; /* Linkleri yan yana dizer */
+    gap: 24px; /* Linkler arası boşluk */
+    align-items: center; /* Dikeyde ortalar */
+}
+
+/* Her bir navigasyon linki */
+.nav-links a {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    color: #555; /* Gri renk */
+    font-size: 15px; /* Yazı boyutu */
+}
+
+/* Linklere hover yapınca renk değişir */
+.nav-links a:hover {
+    color: #1D9E75; /* Yeşile döner */
+}
+
+/* Yeşil buton stili - Register butonu için */
+.btn-primary {
+    background-color: #1D9E75; /* Yeşil arka plan */
+    color: #fff !important; /* Beyaz yazı */
+    padding: 8px 18px; /* İç boşluk */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+}
+
+/* Yeşil butona hover yapınca koyulaşır */
+.btn-primary:hover {
+    background-color: #0F6E56; /* Koyu yeşil */
+}
+
+/* HERO - Ana karşılama bölümü */
+.hero {
+    text-align: center; /* Yazıları ortalar */
+    padding: 100px 20px; /* Üst alt boşluk */
+}
+
+/* Hero ana başlığı */
+.hero h1 {
+    font-size: 42px; /* Büyük yazı */
+    margin-bottom: 16px; /* Alt boşluk */
+    color: #222; /* Koyu renk */
+}
+
+/* Başlık içindeki yeşil vurgulu kelimeler */
+.hero h1 span {
+    color: #1D9E75; /* Yeşil renk */
+}
+
+/* Hero açıklama yazısı */
+.hero p {
+    font-size: 18px; /* Yazı boyutu */
+    color: #666; /* Gri renk */
+    margin-bottom: 32px; /* Alt boşluk */
+}
+
+/* MATERYAL KARTLARI BÖLÜMÜ - Kartları içeren section */
+.resources-section {
+    padding: 60px 40px; /* Üst alt ve yan iç boşluk */
+    max-width: 1100px; /* Bölümün maksimum genişliği */
+    margin: 0 auto; /* Sayfada yatayda ortalar */
+}
+
+/* Bölüm başlığı */
+.resources-section h2 {
+    font-size: 28px; /* Yazı boyutu */
+    margin-bottom: 32px; /* Altındaki kartlarla boşluk */
+    color: #222; /* Koyu renk */
+}
+
+/* Kartları yan yana dizen grid yapısı */
+.cards-grid {
+    display: grid; /* Grid layout kullanır */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Her kart min 240px, eşit genişlikte */
+    gap: 20px; /* Kartlar arası boşluk */
+}
+
+/* Tek bir materyal kartı */
+.card {
+    background-color: #fff; /* Beyaz arka plan */
+    border: 1px solid #eee; /* İnce gri çerçeve */
+    border-radius: 10px; /* Köşeleri yuvarlar */
+    padding: 20px; /* Kart içi boşluk */
+    transition: box-shadow 0.2s; /* Hover'da gölge animasyonu */
+}
+
+/* Karta mouse ile gelince gölge eklenir */
+.card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08); /* Hafif gölge efekti */
+}
+
+/* Kart başlığı */
+.card h3 {
+    font-size: 15px; /* Yazı boyutu */
+    margin: 10px 0 6px; /* Üst alt boşluk */
+    color: #222; /* Koyu renk */
+}
+
+/* Ders kodu ve ho
+/* Notes etiketi - yeşil */
+.badge-notes {
+    background-color: #E1F5EE; /* Açık yeşil arka plan */
+    color: #0F6E56; /* Koyu yeşil yazı */
+}
+
+/* Past Exam etiketi - turuncu */
+.badge-exam {
+    background-color: #FAEEDA; /* Açık turuncu arka plan */
+    color: #854F0B; /* Koyu turuncu yazı */
+}
+
+/* Slides etiketi - mavi */
+.badge-slides {
+    background-color: #E6F1FB; /* Açık mavi arka plan */
+    color: #185FA5; /* Koyu mavi yazı */
+}
+
+/* Resource etiketi - pembe */
+.badge-book {
+    background-color: #FBEAF0; /* Açık pembe arka plan */
+    color: #993556; /* Koyu pembe yazı */
+}
+/* AUTH SAYFASI - Login ve Register sayfaları için ortak stiller */
+.auth-section {
+    display: flex; /* Flexbox ile ortalar */
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    min-height: calc(100vh - 60px); /* Navbar hariç tüm sayfa yüksekliği */
+    padding: 40px 20px; /* Kenar boşluğu */
+}
+
+/* Beyaz form kartı */
+.auth-card {
+    background-color: #fff; /* Beyaz arka plan */
+    border: 1px solid #eee; /* İnce gri çerçeve */
+    border-radius: 12px; /* Köşeleri yuvarlar */
+    padding: 40px; /* İç boşluk */
+    width: 100%; /* Tam genişlik */
+    max-width: 420px; /* Maksimum genişlik */
+}
+
+/* Kart başlığı */
+.auth-card h2 {
+    font-size: 24px; /* Yazı boyutu */
+    color: #222; /* Koyu renk */
+    margin-bottom: 8px; /* Alt boşluk */
+}
+
+/* Kart alt açıklaması */
+.auth-subtitle {
+    font-size: 14px; /* Küçük yazı */
+    color: #888; /* Gri renk */
+    margin-bottom: 28px; /* Altında boşluk */
+}
+
+/* Her input grubu */
+.form-group {
+    margin-bottom: 18px; /* Gruplar arası boşluk */
+}
+
+/* Input etiketi */
+.form-group label {
+    display: block; /* Inputun üstünde ayrı satırda durur */
+    font-size: 13px; /* Küçük yazı */
+    font-weight: bold; /* Kalın */
+    color: #444; /* Koyu gri */
+    margin-bottom: 6px; /* Inputtan önce boşluk */
+}
+
+/* Input alanı */
+.form-group input {
+    width: 100%; /* Tam genişlik */
+    padding: 10px 14px; /* İç boşluk */
+    border: 1px solid #ddd; /* İnce çerçeve */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 14px; /* Yazı boyutu */
+    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
+    transition: border-color 0.2s; /* Animasyon */
+}
+
+/* Input'a tıklanınca çerçeve yeşil olur */
+.form-group input:focus {
+    border-color: #1D9E75; /* Yeşil çerçeve */
+}
+
+/* Form gönder butonu */
+.btn-submit {
+    width: 100%; /* Tam genişlik */
+    padding: 12px; /* İç boşluk */
+    background-color: #1D9E75; /* Yeşil arka plan */
+    color: #fff; /* Beyaz yazı */
+    border: none; /* Çerçeve yok */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 15px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    cursor: pointer; /* Mouse üstüne gelince el işareti */
+    margin-top: 8px; /* Üstten boşluk */
+    transition: background-color 0.2s; /* Hover animasyonu */
+}
+
+/* Butona hover yapınca koyulaşır */
+.btn-submit:hover {
+    background-color: #0F6E56; /* Koyu yeşil */
+}
+
+/* Kartın altındaki yönlendirme yazısı */
+.auth-footer {
+    text-align: center; /* Ortalar */
+    margin-top: 20px; /* Üstten boşluk */
+    font-size: 13px; /* Küçük yazı */
+    color: #888; /* Gri renk */
+}
+
+/* Yönlendirme linki */
+.auth-footer a {
+    color: #1D9E75; /* Yeşil renk */
+    text-decoration: none; /* Alt çizgi yok */
+    font-weight: bold; /* Kalın */
+}
+/* DASHBOARD HEADER - Hoşgeldin bölümü */
+.dashboard-header {
+    padding: 40px 40px 20px; /* İç boşluk */
+    max-width: 1100px; /* Maksimum genişlik */
+    margin: 0 auto; /* Yatayda ortalar */
+}
+
+/* Dashboard başlığı */
+.dashboard-header h1 {
+    font-size: 28px; /* Yazı boyutu */
+    color: #222; /* Koyu renk */
+    margin-bottom: 8px; /* Alt boşluk */
+}
+
+/* Kullanıcı adının yeşil rengi */
+.dashboard-header h1 span {
+    color: #1D9E75; /* Yeşil renk */
+}
+
+/* Dashboard açıklama yazısı */
+.dashboard-header p {
+    font-size: 15px; /* Yazı boyutu */
+    color: #888; /* Gri renk */
+}
+
+/* İSTATİSTİK KARTLARI BÖLÜMÜ */
+.stats-section {
+    padding: 20px 40px; /* İç boşluk */
+    max-width: 1100px; /* Maksimum genişlik */
+    margin: 0 auto; /* Yatayda ortalar */
+}
+
+/* İstatistik kartlarını yan yana dizen grid */
+.stats-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Eşit genişlikte kartlar */
+    gap: 16px; /* Kartlar arası boşluk */
+}
+
+/* Tek bir istatistik kartı */
+.stat-card {
+    background-color: #fff; /* Beyaz arka plan */
+    border: 1px solid #eee; /* İnce çerçeve */
+    border-radius: 10px; /* Köşeleri yuvarlar */
+    padding: 20px 24px; /* İç boşluk */
+}
+
+/* İstatistik kart açıklaması */
+.stat-label {
+    font-size: 13px; /* Küçük yazı */
+    color: #888; /* Gri renk */
+    margin-bottom: 8px; /* Alt boşluk */
+}
+
+/* İstatistik büyük rakamı */
+.stat-number {
+    font-size: 28px; /* Büyük yazı */
+    font-weight: bold; /* Kalın */
+    color: #1D9E75; /* Yeşil renk */
+}
+
+/* Bölüm başlığı ve "See all" butonu yan yana */
+.section-header {
+    display: flex; /* Yan yana dizer */
+    justify-content: space-between; /* İkisini iki uca koyar */
+    align-items: center; /* Dikeyde ortalar */
+    margin-bottom: 20px; /* Alt boşluk */
+}
+
+/* "See all" linki */
+.see-all {
+    font-size: 14px; /* Yazı boyutu */
+    color: #1D9E75; /* Yeşil renk */
+    text-decoration: none; /* Alt çizgi yok */
+}
+
+/* Logout butonu */
+.btn-logout {
+    color: #e74c3c !important; /* Kırmızı renk */
+    font-weight: bold; /* Kalın yazı */
+}
+
+/* Logout butonuna hover yapınca koyulaşır */
+.btn-logout:hover {
+    color: #c0392b !important; /* Koyu kırmızı */
+}
+/* UPLOAD SAYFASI - Materyal yükleme formu */
+.upload-section {
+    display: flex; /* Flexbox ile ortalar */
+    justify-content: center; /* Yatayda ortalar */
+    padding: 60px 20px; /* Üst alt boşluk */
+}
+
+/* Upload form kartı */
+.upload-card {
+    background-color: #fff; /* Beyaz arka plan */
+    border: 1px solid #eee; /* İnce gri çerçeve */
+    border-radius: 12px; /* Köşeleri yuvarlar */
+    padding: 40px; /* İç boşluk */
+    width: 100%; /* Tam genişlik */
+    max-width: 560px; /* Maksimum genişlik */
+}
+
+/* Upload kart başlığı */
+.upload-card h2 {
+    font-size: 24px; /* Yazı boyutu */
+    color: #222; /* Koyu renk */
+    margin-bottom: 8px; /* Alt boşluk */
+}
+
+/* Açılır liste stili */
+.form-group select {
+    width: 100%; /* Tam genişlik */
+    padding: 10px 14px; /* İç boşluk */
+    border: 1px solid #ddd; /* İnce çerçeve */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 14px; /* Yazı boyutu */
+    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
+    background-color: #fff; /* Beyaz arka plan */
+    cursor: pointer; /* El işareti */
+}
+
+/* Açılır listeye tıklanınca yeşil çerçeve */
+.form-group select:focus {
+    border-color: #1D9E75; /* Yeşil çerçeve */
+}
+
+/* Textarea - çok satırlı yazı alanı */
+.form-group textarea {
+    width: 100%; /* Tam genişlik */
+    padding: 10px 14px; /* İç boşluk */
+    border: 1px solid #ddd; /* İnce çerçeve */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 14px; /* Yazı boyutu */
+    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
+    resize: vertical; /* Sadece dikeyde boyutlandırılabilir */
+    font-family: Arial, sans-serif; /* Yazı tipi */
+}
+
+/* Textarea'ya tıklanınca yeşil çerçeve */
+.form-group textarea:focus {
+    border-color: #1D9E75; /* Yeşil çerçeve */
+}
+
+/* Dosya yükleme input stili */
+.form-group input[type="file"] {
+    width: 100%; /* Tam genişlik */
+    padding: 10px 14px; /* İç boşluk */
+    border: 1px dashed #ddd; /* Kesik çizgili çerçeve */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 14px; /* Yazı boyutu */
+    cursor: pointer; /* El işareti */
+    background-color: #fafafa; /* Açık gri arka plan */
+}
+/* RESOURCES SAYFASI - Üst başlık bölümü */
+.resources-header {
+    padding: 40px 40px 10px; /* İç boşluk */
+    max-width: 1100px; /* Maksimum genişlik */
+    margin: 0 auto; /* Yatayda ortalar */
+}
+
+/* Resources sayfa başlığı */
+.resources-header h1 {
+    font-size: 28px; /* Yazı boyutu */
+    color: #222; /* Koyu renk */
+    margin-bottom: 8px; /* Alt boşluk */
+}
+
+/* Resources sayfa açıklaması */
+.resources-header p {
+    font-size: 15px; /* Yazı boyutu */
+    color: #888; /* Gri renk */
+}
+
+/* ARAMA VE FİLTRE BÖLÜMÜ */
+.search-filter-section {
+    padding: 20px 40px; /* İç boşluk */
+    max-width: 1100px; /* Maksimum genişlik */
+    margin: 0 auto; /* Yatayda ortalar */
+}
+
+/* Arama kutusu ve filtreyi yan yana tutar */
+.search-filter-bar {
+    display: flex; /* Yan yana dizer */
+    gap: 12px; /* Aralarındaki boşluk */
+}
+
+/* Arama kutusu */
+.search-input {
+    flex: 1; /* Kalan tüm alanı kaplar */
+    padding: 10px 16px; /* İç boşluk */
+    border: 1px solid #ddd; /* İnce çerçeve */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 14px; /* Yazı boyutu */
+    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
+}
+
+/* Arama kutusuna tıklanınca yeşil çerçeve */
+.search-input:focus {
+    border-color: #1D9E75; /* Yeşil çerçeve */
+}
+
+/* Filtre açılır listesi */
+.filter-select {
+    padding: 10px 16px; /* İç boşluk */
+    border: 1px solid #ddd; /* İnce çerçeve */
+    border-radius: 6px; /* Köşeleri yuvarlar */
+    font-size: 14px; /* Yazı boyutu */
+    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
+    background-color: #fff; /* Beyaz arka plan */
+    cursor: pointer; /* El işareti */
+}
+
+/* Filtreye tıklanınca yeşil çerçeve */
+.filter-select:focus {
+    border-color: #1D9E75; /* Yeşil çerçeve */
+}

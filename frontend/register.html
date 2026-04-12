@@ -1,0 +1,73 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>IBU Study-Hub | Register</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - Diğer sayfalarla aynı navbar -->
+    <nav class="navbar">
+        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> <!-- Ana sayfaya döner -->
+            <li><a href="login.html">Login</a></li> <!-- Login sayfasına gider -->
+        </ul>
+    </nav>
+
+    <!-- REGISTER FORMU - Yeni kullanıcı kayıt bölümü -->
+    <section class="auth-section"> <!-- Formu sayfada ortalar -->
+
+        <div class="auth-card"> <!-- Beyaz kart içine alır -->
+
+            <h2>Create an account</h2> <!-- Kart başlığı -->
+            <p class="auth-subtitle">Join IBU Study-Hub today</p> <!-- Alt açıklama -->
+
+            <!-- Kayıt formu -->
+            <form id="registerForm"> <!-- id ile jQuery'de yakalayacağız -->
+
+                <!-- İsim alanı -->
+                <div class="form-group"> <!-- Her input grubu için wrapper -->
+                    <label for="fullname">Full Name</label> <!-- Input etiketi -->
+                    <input type="text" id="fullname" placeholder="John Doe"> <!-- İsim input -->
+                </div>
+
+                <!-- Email alanı -->
+                <div class="form-group">
+                    <label for="email">Email</label> <!-- Input etiketi -->
+                    <input type="email" id="email" placeholder="your@email.com"> <!-- Email input -->
+                </div>
+
+                <!-- Şifre alanı -->
+                <div class="form-group">
+                    <label for="password">Password</label> <!-- Input etiketi -->
+                    <input type="password" id="password" placeholder="Create a password"> <!-- Şifre input -->
+                </div>
+
+                <!-- Şifre tekrar alanı -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label> <!-- Input etiketi -->
+                    <input type="password" id="confirmPassword" placeholder="Repeat your password"> <!-- Şifre tekrar input -->
+                </div>
+
+                <!-- Kayıt butonu -->
+                <button type="submit" class="btn-submit">Create Account</button> <!-- Formu gönderir -->
+
+            </form>
+
+            <!-- Login sayfasına yönlendirme -->
+            <p class="auth-footer">
+                Already have an account?
+                <a href="login.html">Login here</a> <!-- login.html sayfasına gider -->
+            </p>
+
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - Sayfa yüklendikten sonra çalışsın diye en alta -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
+    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+</body>
+</html>

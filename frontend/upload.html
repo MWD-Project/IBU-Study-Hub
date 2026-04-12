@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>IBU Study-Hub | Upload</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - Dashboard ile aynı navbar -->
+    <nav class="navbar">
+        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo -->
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li> <!-- Dashboard sayfasına gider -->
+            <li><a href="resources.html">Resources</a></li> <!-- Kaynaklar sayfasına gider -->
+            <li><a href="upload.html">Upload</a></li> <!-- Şu an bu sayfadayız -->
+            <li><a href="index.html" class="btn-logout">Logout</a></li> <!-- Çıkış yapar -->
+        </ul>
+    </nav>
+
+    <!-- UPLOAD FORMU - Materyal yükleme bölümü -->
+    <section class="upload-section"> <!-- Formu sayfada ortalar -->
+
+        <div class="upload-card"> <!-- Beyaz kart içine alır -->
+
+            <h2>Upload Material</h2> <!-- Kart başlığı -->
+            <p class="auth-subtitle">Share your notes, exams or slides with other students</p> <!-- Alt açıklama -->
+
+            <!-- Yükleme formu -->
+            <form id="uploadForm"> <!-- id ile jQuery'de yakalayacağız -->
+
+                <!-- Materyal başlığı -->
+                <div class="form-group">
+                    <label for="title">Title</label> <!-- Input etiketi -->
+                    <input type="text" id="title" placeholder="e.g. Data Structures — Lecture 5"> <!-- Başlık input -->
+                </div>
+
+                <!-- Ders kodu -->
+                <div class="form-group">
+                    <label for="courseCode">Course Code</label> <!-- Input etiketi -->
+                    <input type="text" id="courseCode" placeholder="e.g. CS201"> <!-- Ders kodu input -->
+                </div>
+
+                <!-- Hoca adı -->
+                <div class="form-group">
+                    <label for="professor">Professor</label> <!-- Input etiketi -->
+                    <input type="text" id="professor" placeholder="e.g. Dr. Yilmaz"> <!-- Hoca adı input -->
+                </div>
+
+                <!-- Materyal türü seçimi -->
+                <div class="form-group">
+                    <label for="type">Material Type</label> <!-- Input etiketi -->
+                    <select id="type"> <!-- Açılır liste -->
+                        <option value="">Select a type...</option> <!-- Varsayılan boş seçenek -->
+                        <option value="notes">Notes</option> <!-- Ders notu -->
+                        <option value="exam">Past Exam</option> <!-- Geçmiş sınav -->
+                        <option value="slides">Slides</option> <!-- Slayt -->
+                        <option value="book">Resource</option> <!-- Kaynak -->
+                    </select>
+                </div>
+
+                <!-- Açıklama alanı -->
+                <div class="form-group">
+                    <label for="description">Description</label> <!-- Input etiketi -->
+                    <textarea id="description" rows="3" placeholder="Briefly describe the material..."></textarea> <!-- Çok satırlı yazı alanı -->
+                </div>
+
+                <!-- Dosya yükleme alanı -->
+                <div class="form-group">
+                    <label for="file">Upload File</label> <!-- Input etiketi -->
+                    <input type="file" id="file" accept=".pdf,.doc,.docx,.ppt,.pptx"> <!-- Sadece belge formatları kabul eder -->
+                </div>
+
+                <!-- Yükleme butonu -->
+                <button type="submit" class="btn-submit">Upload Material</button> <!-- Formu gönderir -->
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - Sayfa yüklendikten sonra çalışsın diye en alta -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
+    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+</body>
+</html>

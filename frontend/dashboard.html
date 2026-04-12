@@ -1,0 +1,119 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>IBU Study-Hub | Dashboard</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - Giriş yapılmış kullanıcı için navbar -->
+    <nav class="navbar">
+        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo -->
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li> <!-- Dashboard sayfası -->
+            <li><a href="resources.html">Resources</a></li> <!-- Kaynaklar sayfası -->
+            <li><a href="upload.html">Upload</a></li> <!-- Materyal yükleme sayfası -->
+            <li><a href="index.html" class="btn-logout">Logout</a></li> <!-- Çıkış yapar, ana sayfaya döner -->
+        </ul>
+    </nav>
+
+    <!-- DASHBOARD HEADER - Kullanıcıya hoşgeldin mesajı -->
+    <section class="dashboard-header"> <!-- Üst karşılama bölümü -->
+        <h1>Welcome back, <span>Ahmed</span> 👋</h1> <!-- Kullanıcı adı span ile yeşil gösterilecek -->
+        <p>Here's what's new on IBU Study-Hub today.</p> <!-- Alt açıklama -->
+    </section>
+
+    <!-- İSTATİSTİK KARTLARI - Özet rakamlar -->
+    <section class="stats-section"> <!-- İstatistik kartlarının bölümü -->
+        <div class="stats-grid"> <!-- Kartları yan yana dizen grid -->
+
+            <!-- 1. İstatistik - Toplam materyal -->
+            <div class="stat-card">
+                <p class="stat-label">Total Materials</p> <!-- Kart açıklaması -->
+                <h3 class="stat-number">1,240</h3> <!-- Büyük rakam -->
+            </div>
+
+            <!-- 2. İstatistik - Aktif öğrenci -->
+            <div class="stat-card">
+                <p class="stat-label">Active Students</p>
+                <h3 class="stat-number">320</h3>
+            </div>
+
+            <!-- 3. İstatistik - Ders sayısı -->
+            <div class="stat-card">
+                <p class="stat-label">Courses</p>
+                <h3 class="stat-number">85</h3>
+            </div>
+
+            <!-- 4. İstatistik - Çalışma grubu -->
+            <div class="stat-card">
+                <p class="stat-label">Study Groups</p>
+                <h3 class="stat-number">40</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SON YÜKLENEN MATERYALLER - Dashboard'daki materyal kartları -->
+    <section class="resources-section"> <!-- Kartları içeren bölüm -->
+        <div class="section-header"> <!-- Başlık ve buton yan yana -->
+            <h2>Recently Uploaded</h2> <!-- Bölüm başlığı -->
+            <a href="resources.html" class="see-all">See all →</a> <!-- Tüm kaynaklar sayfasına gider -->
+        </div>
+
+        <div class="cards-grid"> <!-- Kartları yan yana dizen grid -->
+
+            <!-- 1. Kart -->
+            <div class="card">
+                <span class="badge badge-notes">Notes</span> <!-- Yeşil etiket -->
+                <h3>Data Structures — Lecture 5</h3>
+                <p>CS201 · Dr. Yilmaz</p>
+                <div class="card-footer">
+                    <span>Ahmed K.</span>
+                    <span>2 days ago</span>
+                </div>
+            </div>
+
+            <!-- 2. Kart -->
+            <div class="card">
+                <span class="badge badge-exam">Past Exam</span> <!-- Turuncu etiket -->
+                <h3>Mathematics II — Final 2023</h3>
+                <p>MATH102 · Dr. Ozturk</p>
+                <div class="card-footer">
+                    <span>Selin B.</span>
+                    <span>4 days ago</span>
+                </div>
+            </div>
+
+            <!-- 3. Kart -->
+            <div class="card">
+                <span class="badge badge-slides">Slides</span> <!-- Mavi etiket -->
+                <h3>Intro to Business — Week 3</h3>
+                <p>BUS101 · Dr. Celik</p>
+                <div class="card-footer">
+                    <span>Mert E.</span>
+                    <span>1 week ago</span>
+                </div>
+            </div>
+
+            <!-- 4. Kart -->
+            <div class="card">
+                <span class="badge badge-book">Resource</span> <!-- Pembe etiket -->
+                <h3>Algorithm Analysis — Solved Problems</h3>
+                <p>CS301 · Dr. Kaya</p>
+                <div class="card-footer">
+                    <span>Zehra D.</span>
+                    <span>1 week ago</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - Sayfa yüklendikten sonra çalışsın diye en alta -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
+    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+</body>
+</html>

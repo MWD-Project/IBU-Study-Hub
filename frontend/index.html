@@ -1,0 +1,89 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>IBU Study-Hub</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- style.css dosyasını sayfaya bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - Sayfanın üst navigasyon çubuğu -->
+    <nav class="navbar"> <!-- navbar class'ı CSS'de şekillendirmek için -->
+        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo yazısı -->
+        <ul class="nav-links"> <!-- Navigasyon linklerinin listesi -->
+            <li><a href="#">Resources</a></li> <!-- Kaynaklar sayfasına link (# şimdilik boş) -->
+            <li><a href="#">Study Groups</a></li> <!-- Çalışma grupları sayfasına link -->
+            <li><a href="login.html">Login</a></li> <!-- login.html sayfasına gider -->
+            <li><a href="register.html" class="btn-primary">Register</a></li> <!-- Yeşil buton stili -->
+        </ul>
+    </nav>
+
+    <!-- HERO - Sayfanın ana karşılama bölümü -->
+    <section class="hero"> <!-- hero class'ı ile CSS'de ortalayıp şekillendireceğiz -->
+        <h1>The <span>ultimate platform</span> for academic success</h1> <!-- Ana başlık, span ile renklendireceğiz -->
+        <p>Find lecture notes, past exams and study groups all in one place.</p> <!-- Açıklama yazısı -->
+        <a href="register.html" class="btn-primary">Get Started</a> <!-- Kayıt sayfasına yönlendiren buton -->
+    </section>
+
+    <!-- MATERYAL KARTLARI - Son yüklenen materyalleri gösterir -->
+    <section class="resources-section"> <!-- resources-section class'ı CSS'de şekillendirilecek -->
+
+        <!-- Bölüm başlığı -->
+        <h2>Recently Uploaded Materials</h2> <!-- Kartlar bölümünün üst başlığı -->
+
+        <!-- Kartların bulunduğu grid container -->
+        <div class="cards-grid"> <!-- Kartları yan yana dizmek için grid yapısı -->
+
+            <!-- 1. Kart - Ders notu -->
+            <div class="card"> <!-- Tek bir materyal kartı -->
+                <span class="badge badge-notes">Notes</span> <!-- Yeşil - materyal türü etiketi -->
+                <h3>Data Structures — Lecture 5</h3> <!-- Materyalin başlığı -->
+                <p>CS201 · Dr. Yilmaz</p> <!-- Ders kodu ve hocanın adı -->
+                <div class="card-footer"> <!-- Kartın alt bilgi kısmı -->
+                    <span>Ahmed K.</span> <!-- Materyali yükleyen kişi -->
+                    <span>2 days ago</span> <!-- Ne zaman yüklendiği -->
+                </div>
+            </div>
+
+            <!-- 2. Kart - Sınav sorusu -->
+            <div class="card">
+                <span class="badge badge-exam">Past Exam</span> <!-- Turuncu - sınav türü etiketi -->
+                <h3>Mathematics II — Final 2023</h3>
+                <p>MATH102 · Dr. Ozturk</p>
+                <div class="card-footer">
+                    <span>Selin B.</span>
+                    <span>4 days ago</span>
+                </div>
+            </div>
+
+            <!-- 3. Kart - Slayt -->
+            <div class="card">
+                <span class="badge badge-slides">Slides</span> <!-- Mavi - slayt türü etiketi -->
+                <h3>Intro to Business — Week 3</h3>
+                <p>BUS101 · Dr. Celik</p>
+                <div class="card-footer">
+                    <span>Mert E.</span>
+                    <span>1 week ago</span>
+                </div>
+            </div>
+
+            <!-- 4. Kart - Kaynak -->
+            <div class="card">
+                <span class="badge badge-book">Resource</span> <!-- Pembe - kaynak türü etiketi -->
+                <h3>Algorithm Analysis — Solved Problems</h3>
+                <p>CS301 · Dr. Kaya</p>
+                <div class="card-footer">
+                    <span>Zehra D.</span>
+                    <span>1 week ago</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - En alta yazılır, sayfa yüklendikten sonra çalışsın diye -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesini internetten yükler -->
+    <script src="js/main.js"></script> <!-- Kendi yazdığımız JS dosyasını bağlar -->
+</body>
+</html>

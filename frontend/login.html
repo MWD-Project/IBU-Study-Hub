@@ -1,0 +1,61 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>IBU Study-Hub | Login</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - index.html ile aynı navbar -->
+    <nav class="navbar">
+        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> <!-- Ana sayfaya geri döner -->
+            <li><a href="register.html" class="btn-primary">Register</a></li> <!-- Kayıt sayfasına gider -->
+        </ul>
+    </nav>
+
+    <!-- LOGIN FORMU - Kullanıcı giriş bölümü -->
+    <section class="auth-section"> <!-- Formu sayfada ortalar -->
+
+        <div class="auth-card"> <!-- Beyaz kart içine alır -->
+
+            <h2>Welcome back</h2> <!-- Kart başlığı -->
+            <p class="auth-subtitle">Login to your IBU Study-Hub account</p> <!-- Alt açıklama -->
+
+            <!-- Giriş formu -->
+            <form id="loginForm"> <!-- id ile jQuery'de yakalayacağız -->
+
+                <!-- Email alanı -->
+                <div class="form-group"> <!-- Her input grubu için wrapper -->
+                    <label for="email">Email</label> <!-- Input'un etiketi -->
+                    <input type="email" id="email" placeholder="your@email.com"> <!-- Email input -->
+                </div>
+
+                <!-- Şifre alanı -->
+                <div class="form-group">
+                    <label for="password">Password</label> <!-- Input'un etiketi -->
+                    <input type="password" id="password" placeholder="Enter your password"> <!-- Şifre input -->
+                </div>
+
+                <!-- Giriş butonu -->
+                <button type="submit" class="btn-submit">Login</button> <!-- Formu gönderir -->
+
+            </form>
+
+            <!-- Kayıt sayfasına yönlendirme -->
+            <p class="auth-footer">
+                Don't have an account? 
+                <a href="register.html">Register here</a> <!-- register.html sayfasına gider -->
+            </p>
+
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - Sayfa yüklendikten sonra çalışsın diye en alta -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
+    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+</body>
+</html>
