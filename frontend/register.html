@@ -1,63 +1,73 @@
 <!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
 <html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
 <head>
-    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
-    <title>IBU Study-Hub | Register</title> <!-- Tarayıcı sekmesinde görünen başlık -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için UTF-8 kodlaması -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil cihazlarda düzgün görünsün diye -->
+    <title>Study Hub | Register</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Tüm sayfalarda kullanılan ortak CSS dosyası -->
 </head>
 <body> <!-- Sayfada görünen her şey body içine yazılır -->
 
-    <!-- NAVBAR - Diğer sayfalarla aynı navbar -->
-    <nav class="navbar">
-        <div class="logo">IBU Study-Hub</div> <!-- Sol taraftaki logo -->
-        <ul class="nav-links">
+    <!-- NAVBAR - Sayfanın üst kısmındaki navigasyon çubuğu -->
+    <nav class="navbar"> <!-- Navbar container'ı -->
+        <div class="logo">Study Hub</div> <!-- Sol taraftaki logo -->
+        <ul class="nav-links"> <!-- Sağ taraftaki linkler -->
             <li><a href="index.html">Home</a></li> <!-- Ana sayfaya döner -->
             <li><a href="login.html">Login</a></li> <!-- Login sayfasına gider -->
         </ul>
     </nav>
 
     <!-- REGISTER FORMU - Yeni kullanıcı kayıt bölümü -->
-    <section class="auth-section"> <!-- Formu sayfada ortalar -->
+    <section class="auth-section"> <!-- Formu sayfada ortalayan section -->
 
-        <div class="auth-card"> <!-- Beyaz kart içine alır -->
+        <div class="auth-card"> <!-- Beyaz kart görünümü veren wrapper -->
 
             <h2>Create an account</h2> <!-- Kart başlığı -->
-            <p class="auth-subtitle">Join IBU Study-Hub today</p> <!-- Alt açıklama -->
+            <p class="auth-subtitle">Join Study Hub today</p> <!-- Alt açıklama metni -->
 
-            <!-- Kayıt formu -->
-            <form id="registerForm"> <!-- id ile jQuery'de yakalayacağız -->
+            <!-- Kayıt formu - main.js tarafından #registerForm ile yakalanır -->
+            <form id="registerForm"> <!-- id ile jQuery'de submit event'i dinlenir -->
 
-                <!-- İsim alanı -->
-                <div class="form-group"> <!-- Her input grubu için wrapper -->
-                    <label for="fullname">Full Name</label> <!-- Input etiketi -->
-                    <input type="text" id="fullname" placeholder="John Doe"> <!-- İsim input -->
+                <!-- İsim alanı - kullanıcının tam adını alır -->
+                <div class="form-group"> <!-- Her input için wrapper, label ve input'u gruplar -->
+                    <label for="fullname">Full Name</label> <!-- Input etiketi, tıklanınca input'a focus olur -->
+                    <input type="text" id="fullname" placeholder="John Doe"> <!-- Metin girişi, main.js #fullname ile okur -->
                 </div>
 
-                <!-- Email alanı -->
+                <!-- Email alanı - kullanıcının email adresini alır, login için kullanılır -->
                 <div class="form-group">
                     <label for="email">Email</label> <!-- Input etiketi -->
-                    <input type="email" id="email" placeholder="your@email.com"> <!-- Email input -->
+                    <input type="email" id="email" placeholder="your@email.com"> <!-- type="email" tarayıcının format kontrolü yapması için -->
                 </div>
 
-                <!-- Şifre alanı -->
+                <!-- Üniversite seçimi - kullanıcının hangi üniversiteden olduğunu belirler -->
+                <div class="form-group">
+                    <label for="university">University</label> <!-- Input etiketi -->
+                    <select id="university"> <!-- Açılır menü, main.js #university ile seçilen değeri okur -->
+                        <option value="IBU">International Balkan University (IBU)</option> <!-- Varsayılan seçim -->
+                        <option value="Bilkent">Bilkent University (BILKENT)</option> <!-- Bilkent seçeneği -->
+                        <option value="Bogazici">Boğaziçi University (BOUN)</option> <!-- Boğaziçi seçeneği -->
+                    </select>
+                </div>
+
+                <!-- Şifre alanı - minimum 6 karakter olmalı, backend kontrol eder -->
                 <div class="form-group">
                     <label for="password">Password</label> <!-- Input etiketi -->
-                    <input type="password" id="password" placeholder="Create a password"> <!-- Şifre input -->
+                    <input type="password" id="password" placeholder="Create a password"> <!-- type="password" karakterleri gizler -->
                 </div>
 
-                <!-- Şifre tekrar alanı -->
+                <!-- Şifre tekrar alanı - main.js'de iki şifre eşleşiyor mu kontrol edilir -->
                 <div class="form-group">
                     <label for="confirmPassword">Confirm Password</label> <!-- Input etiketi -->
                     <input type="password" id="confirmPassword" placeholder="Repeat your password"> <!-- Şifre tekrar input -->
                 </div>
 
-                <!-- Kayıt butonu -->
-                <button type="submit" class="btn-submit">Create Account</button> <!-- Formu gönderir -->
+                <!-- Kayıt butonu - tıklanınca form submit olur, main.js backend'e gönderir -->
+                <button type="submit" class="btn-submit">Create Account</button> <!-- type="submit" formu gönderir -->
 
             </form>
 
-            <!-- Login sayfasına yönlendirme -->
+            <!-- Login sayfasına yönlendirme - zaten hesabı olanlar için -->
             <p class="auth-footer">
                 Already have an account?
                 <a href="login.html">Login here</a> <!-- login.html sayfasına gider -->
@@ -66,8 +76,8 @@
         </div>
     </section>
 
-    <!-- SCRIPTLER - Sayfa yüklendikten sonra çalışsın diye en alta -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
-    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+    <!-- SCRIPTLER - Sayfanın en altına koyulur, HTML yüklendikten sonra çalışır -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi, CDN'den yüklenir -->
+    <script src="js/main.js"></script> <!-- Tüm frontend JavaScript kodu buradan gelir -->
 </body>
 </html>

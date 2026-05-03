@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub | Browse Materials</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ARKA PLAN SLIDESHOW -->
+    <div id="bgSlideshow"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Study Hub</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="index.html" class="btn-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- BAŞLIK -->
+    <section class="dashboard-header">
+        <div>
+            <h1>Browse <span>Materials</span></h1>
+            <p>Choose a category to explore</p>
+        </div>
+    </section>
+
+    <!-- İKİ BÜYÜK KART - Notes ve Past Exams -->
+    <section class="category-section">
+        <div class="category-grid">
+
+            <!-- Notes Kartı -->
+            <a href="resources.html?type=notes" class="category-card category-notes">
+                <div class="category-icon">📝</div>
+                <h2>Notes</h2>
+                <p>Ders notları, özetler ve çalışma dokümanları</p>
+            </a>
+
+            <!-- Past Exams Kartı -->
+            <a href="resources.html?type=exam" class="category-card category-exams">
+                <div class="category-icon">📄</div>
+                <h2>Past Exams</h2>
+                <p>Geçmiş sınav soruları ve çözümleri</p>
+            </a>
+
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

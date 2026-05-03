@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için UTF-8 kodlaması -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobil cihazlarda düzgün görünsün diye -->
+    <title>Study Hub | Admin Panel</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Tüm sayfalarda kullanılan ortak CSS dosyası -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR - Sayfanın üst kısmındaki navigasyon çubuğu -->
+    <nav class="navbar"> <!-- Navbar container'ı -->
+        <div class="logo">Study Hub <span class="admin-badge">Admin</span></div> <!-- Sol taraftaki logo ve admin rozeti -->
+        <ul class="nav-links"> <!-- Sağ taraftaki navigasyon linkleri -->
+            <li><a href="dashboard.html">Dashboard</a></li> <!-- Dashboard sayfasına gider -->
+            <li><a href="index.html" class="btn-logout">Logout</a></li> <!-- Ana sayfaya gider (logout) -->
+        </ul>
+    </nav>
+
+    <!-- ADMIN HEADER - Sayfanın üst başlık bölümü -->
+    <section class="dashboard-header"> <!-- Başlık section'ı -->
+        <h1>Admin <span>Panel</span></h1> <!-- Ana başlık, span yeşil renk için -->
+        <p>Manage users, materials and platform statistics</p> <!-- Açıklama metni -->
+    </section>
+
+    <!-- İSTATİSTİK KARTLARI - Backend'den gelen sayıları gösterir -->
+    <section class="stats-section"> <!-- İstatistik bölümü -->
+        <div class="stats-grid"> <!-- 4 kartı yan yana dizen grid -->
+
+            <div class="stat-card"> <!-- Toplam kullanıcı kartı -->
+                <p class="stat-label">Total Users</p> <!-- Kart başlığı -->
+                <h3 class="stat-number" id="totalUsers">...</h3> <!-- main.js tarafından backend'den gelen kullanıcı sayısı buraya yazılır -->
+            </div>
+
+            <div class="stat-card"> <!-- Toplam materyal kartı -->
+                <p class="stat-label">Total Materials</p>
+                <h3 class="stat-number" id="totalMaterials">...</h3> <!-- main.js tarafından backend'den gelen materyal sayısı buraya yazılır -->
+            </div>
+
+            <div class="stat-card"> <!-- Toplam not kartı -->
+                <p class="stat-label">Notes</p>
+                <h3 class="stat-number" id="totalNotes">...</h3> <!-- main.js tarafından backend'den gelen not sayısı buraya yazılır -->
+            </div>
+
+            <div class="stat-card"> <!-- Toplam sınav kartı -->
+                <p class="stat-label">Past Exams</p>
+                <h3 class="stat-number" id="totalExams">...</h3> <!-- main.js tarafından backend'den gelen sınav sayısı buraya yazılır -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KULLANICI YÖNETİMİ - Tüm kullanıcıları listeler, siler, rol değiştirir -->
+    <section class="admin-section"> <!-- Kullanıcı yönetimi bölümü -->
+        <div class="section-header">
+            <h2>Users</h2> <!-- Bölüm başlığı -->
+        </div>
+        <div class="admin-table-wrapper"> <!-- Tablonun yatay scroll için sarmalayıcısı -->
+            <table class="admin-table" id="usersTable"> <!-- Kullanıcı tablosu -->
+                <thead> <!-- Tablo başlık satırı -->
+                    <tr>
+                        <th>ID</th> <!-- Kullanıcının veritabanı ID'si -->
+                        <th>Full Name</th> <!-- Kullanıcının tam adı -->
+                        <th>Email</th> <!-- Kullanıcının email adresi -->
+                        <th>Role</th> <!-- Kullanıcının rolü: user veya admin -->
+                        <th>Joined</th> <!-- Kayıt tarihi -->
+                        <th>Action</th> <!-- Silme ve rol değiştirme butonları -->
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody"> <!-- main.js tarafından backend verisiyle doldurulur -->
+                    <tr><td colspan="6" class="loading-text">Loading...</td></tr> <!-- Veri yüklenene kadar gösterilir -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- MATERYAL YÖNETİMİ - Tüm materyalleri listeler ve siler -->
+    <section class="admin-section"> <!-- Materyal yönetimi bölümü -->
+        <div class="section-header">
+            <h2>Materials</h2> <!-- Bölüm başlığı -->
+        </div>
+        <div class="admin-table-wrapper"> <!-- Tablonun yatay scroll için sarmalayıcısı -->
+            <table class="admin-table" id="materialsTable"> <!-- Materyal tablosu -->
+                <thead> <!-- Tablo başlık satırı -->
+                    <tr>
+                        <th>ID</th> <!-- Materyalin veritabanı ID'si -->
+                        <th>Title</th> <!-- Materyal başlığı -->
+                        <th>Course</th> <!-- Ders kodu (örn: CS201) -->
+                        <th>Type</th> <!-- Materyal türü: notes, exam, slides, book -->
+                        <th>Uploaded By</th> <!-- Yükleyen kullanıcının adı -->
+                        <th>Action</th> <!-- Silme butonu -->
+                    </tr>
+                </thead>
+                <tbody id="materialsTableBody"> <!-- main.js tarafından backend verisiyle doldurulur -->
+                    <tr><td colspan="6" class="loading-text">Loading...</td></tr> <!-- Veri yüklenene kadar gösterilir -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SCRIPTLER - Sayfanın en altına koyulur, HTML yüklendikten sonra çalışır -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi, CDN'den yüklenir -->
+    <script src="js/main.js"></script> <!-- Tüm frontend JavaScript kodu buradan gelir -->
+</body>
+</html>

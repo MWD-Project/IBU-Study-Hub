@@ -24,446 +24,942 @@ body {
 
 /* Logo yazısının stili */
 .logo {
-    font-size: 20px; /* Yazı boyutu */
-    font-weight: bold; /* Kalın yazı */
+    font-size: 20px;
+    font-weight: bold;
     color: #1D9E75; /* Yeşil renk */
 }
 
 /* Navigasyon linklerinin listesi */
 .nav-links {
     list-style: none; /* Madde işaretlerini kaldırır */
-    display: flex; /* Linkleri yan yana dizer */
-    gap: 24px; /* Linkler arası boşluk */
-    align-items: center; /* Dikeyde ortalar */
+    display: flex;
+    gap: 24px;
+    align-items: center;
 }
 
 /* Her bir navigasyon linki */
 .nav-links a {
-    text-decoration: none; /* Alt çizgiyi kaldırır */
-    color: #555; /* Gri renk */
-    font-size: 15px; /* Yazı boyutu */
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
 }
 
 /* Linklere hover yapınca renk değişir */
 .nav-links a:hover {
-    color: #1D9E75; /* Yeşile döner */
+    color: #1D9E75;
 }
 
 /* Yeşil buton stili - Register butonu için */
 .btn-primary {
-    background-color: #1D9E75; /* Yeşil arka plan */
-    color: #fff !important; /* Beyaz yazı */
-    padding: 8px 18px; /* İç boşluk */
-    border-radius: 6px; /* Köşeleri yuvarlar */
+    background-color: #1D9E75;
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
 }
 
-/* Yeşil butona hover yapınca koyulaşır */
 .btn-primary:hover {
     background-color: #0F6E56; /* Koyu yeşil */
 }
 
 /* HERO - Ana karşılama bölümü */
 .hero {
-    text-align: center; /* Yazıları ortalar */
-    padding: 100px 20px; /* Üst alt boşluk */
+    text-align: center;
+    padding: 100px 20px;
 }
 
-/* Hero ana başlığı */
 .hero h1 {
-    font-size: 42px; /* Büyük yazı */
-    margin-bottom: 16px; /* Alt boşluk */
-    color: #222; /* Koyu renk */
+    font-size: 42px;
+    margin-bottom: 16px;
+    color: #222;
 }
 
-/* Başlık içindeki yeşil vurgulu kelimeler */
 .hero h1 span {
-    color: #1D9E75; /* Yeşil renk */
+    color: #1D9E75; /* Başlık içindeki yeşil vurgu */
 }
 
-/* Hero açıklama yazısı */
 .hero p {
-    font-size: 18px; /* Yazı boyutu */
-    color: #666; /* Gri renk */
-    margin-bottom: 32px; /* Alt boşluk */
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 32px;
 }
 
-/* MATERYAL KARTLARI BÖLÜMÜ - Kartları içeren section */
+/* MATERYAL KARTLARI BÖLÜMÜ */
 .resources-section {
-    padding: 60px 40px; /* Üst alt ve yan iç boşluk */
-    max-width: 1100px; /* Bölümün maksimum genişliği */
-    margin: 0 auto; /* Sayfada yatayda ortalar */
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* Bölüm başlığı */
 .resources-section h2 {
-    font-size: 28px; /* Yazı boyutu */
-    margin-bottom: 32px; /* Altındaki kartlarla boşluk */
-    color: #222; /* Koyu renk */
+    font-size: 28px;
+    margin-bottom: 32px;
+    color: #222;
 }
 
-/* Kartları yan yana dizen grid yapısı */
-.cards-grid {
-    display: grid; /* Grid layout kullanır */
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Her kart min 240px, eşit genişlikte */
-    gap: 20px; /* Kartlar arası boşluk */
-}
+/* ==================== BADGE RENKLERİ - Materyal türü etiketleri ==================== */
 
-/* Tek bir materyal kartı */
-.card {
-    background-color: #fff; /* Beyaz arka plan */
-    border: 1px solid #eee; /* İnce gri çerçeve */
-    border-radius: 10px; /* Köşeleri yuvarlar */
-    padding: 20px; /* Kart içi boşluk */
-    transition: box-shadow 0.2s; /* Hover'da gölge animasyonu */
-}
-
-/* Karta mouse ile gelince gölge eklenir */
-.card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08); /* Hafif gölge efekti */
-}
-
-/* Kart başlığı */
-.card h3 {
-    font-size: 15px; /* Yazı boyutu */
-    margin: 10px 0 6px; /* Üst alt boşluk */
-    color: #222; /* Koyu renk */
-}
-
-/* Ders kodu ve ho
 /* Notes etiketi - yeşil */
 .badge-notes {
-    background-color: #E1F5EE; /* Açık yeşil arka plan */
-    color: #0F6E56; /* Koyu yeşil yazı */
+    background-color: #E1F5EE;
+    color: #0F6E56;
 }
 
 /* Past Exam etiketi - turuncu */
 .badge-exam {
-    background-color: #FAEEDA; /* Açık turuncu arka plan */
-    color: #854F0B; /* Koyu turuncu yazı */
+    background-color: #FAEEDA;
+    color: #854F0B;
 }
 
 /* Slides etiketi - mavi */
 .badge-slides {
-    background-color: #E6F1FB; /* Açık mavi arka plan */
-    color: #185FA5; /* Koyu mavi yazı */
+    background-color: #E6F1FB;
+    color: #185FA5;
 }
 
 /* Resource etiketi - pembe */
 .badge-book {
-    background-color: #FBEAF0; /* Açık pembe arka plan */
-    color: #993556; /* Koyu pembe yazı */
+    background-color: #FBEAF0;
+    color: #993556;
 }
-/* AUTH SAYFASI - Login ve Register sayfaları için ortak stiller */
+
+/* ==================== AUTH SAYFASI - Login ve Register ==================== */
 .auth-section {
-    display: flex; /* Flexbox ile ortalar */
-    justify-content: center; /* Yatayda ortalar */
-    align-items: center; /* Dikeyde ortalar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: calc(100vh - 60px); /* Navbar hariç tüm sayfa yüksekliği */
-    padding: 40px 20px; /* Kenar boşluğu */
+    padding: 40px 20px;
 }
 
 /* Beyaz form kartı */
 .auth-card {
-    background-color: #fff; /* Beyaz arka plan */
-    border: 1px solid #eee; /* İnce gri çerçeve */
-    border-radius: 12px; /* Köşeleri yuvarlar */
-    padding: 40px; /* İç boşluk */
-    width: 100%; /* Tam genişlik */
-    max-width: 420px; /* Maksimum genişlik */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
 }
 
-/* Kart başlığı */
 .auth-card h2 {
-    font-size: 24px; /* Yazı boyutu */
-    color: #222; /* Koyu renk */
-    margin-bottom: 8px; /* Alt boşluk */
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 8px;
 }
 
-/* Kart alt açıklaması */
 .auth-subtitle {
-    font-size: 14px; /* Küçük yazı */
-    color: #888; /* Gri renk */
-    margin-bottom: 28px; /* Altında boşluk */
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 28px;
 }
 
 /* Her input grubu */
 .form-group {
-    margin-bottom: 18px; /* Gruplar arası boşluk */
+    margin-bottom: 18px;
 }
 
-/* Input etiketi */
 .form-group label {
-    display: block; /* Inputun üstünde ayrı satırda durur */
-    font-size: 13px; /* Küçük yazı */
-    font-weight: bold; /* Kalın */
-    color: #444; /* Koyu gri */
-    margin-bottom: 6px; /* Inputtan önce boşluk */
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 6px;
 }
 
-/* Input alanı */
 .form-group input {
-    width: 100%; /* Tam genişlik */
-    padding: 10px 14px; /* İç boşluk */
-    border: 1px solid #ddd; /* İnce çerçeve */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 14px; /* Yazı boyutu */
-    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
-    transition: border-color 0.2s; /* Animasyon */
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-/* Input'a tıklanınca çerçeve yeşil olur */
 .form-group input:focus {
-    border-color: #1D9E75; /* Yeşil çerçeve */
+    border-color: #1D9E75; /* Tıklanınca yeşil çerçeve */
 }
 
 /* Form gönder butonu */
 .btn-submit {
-    width: 100%; /* Tam genişlik */
-    padding: 12px; /* İç boşluk */
-    background-color: #1D9E75; /* Yeşil arka plan */
-    color: #fff; /* Beyaz yazı */
-    border: none; /* Çerçeve yok */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 15px; /* Yazı boyutu */
-    font-weight: bold; /* Kalın yazı */
-    cursor: pointer; /* Mouse üstüne gelince el işareti */
-    margin-top: 8px; /* Üstten boşluk */
-    transition: background-color 0.2s; /* Hover animasyonu */
+    width: 100%;
+    padding: 12px;
+    background-color: #1D9E75;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
 }
 
-/* Butona hover yapınca koyulaşır */
 .btn-submit:hover {
-    background-color: #0F6E56; /* Koyu yeşil */
+    background-color: #0F6E56;
 }
 
 /* Kartın altındaki yönlendirme yazısı */
 .auth-footer {
-    text-align: center; /* Ortalar */
-    margin-top: 20px; /* Üstten boşluk */
-    font-size: 13px; /* Küçük yazı */
-    color: #888; /* Gri renk */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888;
 }
 
-/* Yönlendirme linki */
 .auth-footer a {
-    color: #1D9E75; /* Yeşil renk */
-    text-decoration: none; /* Alt çizgi yok */
-    font-weight: bold; /* Kalın */
+    color: #1D9E75;
+    text-decoration: none;
+    font-weight: bold;
 }
-/* DASHBOARD HEADER - Hoşgeldin bölümü */
+
+/* ==================== DASHBOARD HEADER ==================== */
 .dashboard-header {
-    padding: 40px 40px 20px; /* İç boşluk */
-    max-width: 1100px; /* Maksimum genişlik */
-    margin: 0 auto; /* Yatayda ortalar */
+    padding: 40px 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex; /* Başlık ve buton yan yana */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Dashboard başlığı */
 .dashboard-header h1 {
-    font-size: 28px; /* Yazı boyutu */
-    color: #222; /* Koyu renk */
-    margin-bottom: 8px; /* Alt boşluk */
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 8px;
 }
 
-/* Kullanıcı adının yeşil rengi */
 .dashboard-header h1 span {
-    color: #1D9E75; /* Yeşil renk */
+    color: #1D9E75;
 }
 
-/* Dashboard açıklama yazısı */
 .dashboard-header p {
-    font-size: 15px; /* Yazı boyutu */
-    color: #888; /* Gri renk */
+    font-size: 15px;
+    color: #888;
 }
 
-/* İSTATİSTİK KARTLARI BÖLÜMÜ */
+/* Browse Materials butonu - sağ üstte */
+.btn-browse {
+    background: #16a34a;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+    box-shadow: 0 4px 12px rgba(22,163,74,0.3);
+}
+
+.btn-browse:hover {
+    background: #15803d;
+}
+
+/* ==================== İSTATİSTİK KARTLARI ==================== */
 .stats-section {
-    padding: 20px 40px; /* İç boşluk */
-    max-width: 1100px; /* Maksimum genişlik */
-    margin: 0 auto; /* Yatayda ortalar */
+    padding: 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* İstatistik kartlarını yan yana dizen grid */
 .stats-grid {
-    display: grid; /* Grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Eşit genişlikte kartlar */
-    gap: 16px; /* Kartlar arası boşluk */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
 }
 
-/* Tek bir istatistik kartı */
 .stat-card {
-    background-color: #fff; /* Beyaz arka plan */
-    border: 1px solid #eee; /* İnce çerçeve */
-    border-radius: 10px; /* Köşeleri yuvarlar */
-    padding: 20px 24px; /* İç boşluk */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px 24px;
 }
 
-/* İstatistik kart açıklaması */
 .stat-label {
-    font-size: 13px; /* Küçük yazı */
-    color: #888; /* Gri renk */
-    margin-bottom: 8px; /* Alt boşluk */
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
 }
 
-/* İstatistik büyük rakamı */
 .stat-number {
-    font-size: 28px; /* Büyük yazı */
-    font-weight: bold; /* Kalın */
-    color: #1D9E75; /* Yeşil renk */
+    font-size: 28px;
+    font-weight: bold;
+    color: #1D9E75;
 }
 
 /* Bölüm başlığı ve "See all" butonu yan yana */
 .section-header {
-    display: flex; /* Yan yana dizer */
-    justify-content: space-between; /* İkisini iki uca koyar */
-    align-items: center; /* Dikeyde ortalar */
-    margin-bottom: 20px; /* Alt boşluk */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* "See all" linki */
 .see-all {
-    font-size: 14px; /* Yazı boyutu */
-    color: #1D9E75; /* Yeşil renk */
-    text-decoration: none; /* Alt çizgi yok */
+    font-size: 14px;
+    color: #1D9E75;
+    text-decoration: none;
 }
 
 /* Logout butonu */
 .btn-logout {
-    color: #e74c3c !important; /* Kırmızı renk */
-    font-weight: bold; /* Kalın yazı */
+    color: #e74c3c !important;
+    font-weight: bold;
 }
 
-/* Logout butonuna hover yapınca koyulaşır */
 .btn-logout:hover {
-    color: #c0392b !important; /* Koyu kırmızı */
+    color: #c0392b !important;
 }
-/* UPLOAD SAYFASI - Materyal yükleme formu */
+
+/* ==================== UPLOAD SAYFASI ==================== */
 .upload-section {
-    display: flex; /* Flexbox ile ortalar */
-    justify-content: center; /* Yatayda ortalar */
-    padding: 60px 20px; /* Üst alt boşluk */
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
-/* Upload form kartı */
 .upload-card {
-    background-color: #fff; /* Beyaz arka plan */
-    border: 1px solid #eee; /* İnce gri çerçeve */
-    border-radius: 12px; /* Köşeleri yuvarlar */
-    padding: 40px; /* İç boşluk */
-    width: 100%; /* Tam genişlik */
-    max-width: 560px; /* Maksimum genişlik */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 560px;
 }
 
-/* Upload kart başlığı */
 .upload-card h2 {
-    font-size: 24px; /* Yazı boyutu */
-    color: #222; /* Koyu renk */
-    margin-bottom: 8px; /* Alt boşluk */
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 8px;
 }
 
-/* Açılır liste stili */
+/* Açılır liste */
 .form-group select {
-    width: 100%; /* Tam genişlik */
-    padding: 10px 14px; /* İç boşluk */
-    border: 1px solid #ddd; /* İnce çerçeve */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 14px; /* Yazı boyutu */
-    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
-    background-color: #fff; /* Beyaz arka plan */
-    cursor: pointer; /* El işareti */
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-/* Açılır listeye tıklanınca yeşil çerçeve */
 .form-group select:focus {
-    border-color: #1D9E75; /* Yeşil çerçeve */
+    border-color: #1D9E75;
 }
 
 /* Textarea - çok satırlı yazı alanı */
 .form-group textarea {
-    width: 100%; /* Tam genişlik */
-    padding: 10px 14px; /* İç boşluk */
-    border: 1px solid #ddd; /* İnce çerçeve */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 14px; /* Yazı boyutu */
-    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
-    resize: vertical; /* Sadece dikeyde boyutlandırılabilir */
-    font-family: Arial, sans-serif; /* Yazı tipi */
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    resize: vertical;
+    font-family: Arial, sans-serif;
 }
 
-/* Textarea'ya tıklanınca yeşil çerçeve */
 .form-group textarea:focus {
-    border-color: #1D9E75; /* Yeşil çerçeve */
+    border-color: #1D9E75;
 }
 
-/* Dosya yükleme input stili */
+/* Dosya yükleme input */
 .form-group input[type="file"] {
-    width: 100%; /* Tam genişlik */
-    padding: 10px 14px; /* İç boşluk */
-    border: 1px dashed #ddd; /* Kesik çizgili çerçeve */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 14px; /* Yazı boyutu */
-    cursor: pointer; /* El işareti */
-    background-color: #fafafa; /* Açık gri arka plan */
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px dashed #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #fafafa;
 }
-/* RESOURCES SAYFASI - Üst başlık bölümü */
+
+/* ==================== RESOURCES SAYFASI ==================== */
 .resources-header {
-    padding: 40px 40px 10px; /* İç boşluk */
-    max-width: 1100px; /* Maksimum genişlik */
-    margin: 0 auto; /* Yatayda ortalar */
+    padding: 40px 40px 10px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* Resources sayfa başlığı */
 .resources-header h1 {
-    font-size: 28px; /* Yazı boyutu */
-    color: #222; /* Koyu renk */
-    margin-bottom: 8px; /* Alt boşluk */
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 8px;
 }
 
-/* Resources sayfa açıklaması */
 .resources-header p {
-    font-size: 15px; /* Yazı boyutu */
-    color: #888; /* Gri renk */
+    font-size: 15px;
+    color: #888;
 }
 
-/* ARAMA VE FİLTRE BÖLÜMÜ */
+/* Arama ve filtre bölümü */
 .search-filter-section {
-    padding: 20px 40px; /* İç boşluk */
-    max-width: 1100px; /* Maksimum genişlik */
-    margin: 0 auto; /* Yatayda ortalar */
+    padding: 20px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* Arama kutusu ve filtreyi yan yana tutar */
 .search-filter-bar {
-    display: flex; /* Yan yana dizer */
-    gap: 12px; /* Aralarındaki boşluk */
+    display: flex;
+    gap: 12px;
 }
 
-/* Arama kutusu */
 .search-input {
-    flex: 1; /* Kalan tüm alanı kaplar */
-    padding: 10px 16px; /* İç boşluk */
-    border: 1px solid #ddd; /* İnce çerçeve */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 14px; /* Yazı boyutu */
-    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
 }
 
-/* Arama kutusuna tıklanınca yeşil çerçeve */
 .search-input:focus {
-    border-color: #1D9E75; /* Yeşil çerçeve */
+    border-color: #1D9E75;
 }
 
-/* Filtre açılır listesi */
 .filter-select {
-    padding: 10px 16px; /* İç boşluk */
-    border: 1px solid #ddd; /* İnce çerçeve */
-    border-radius: 6px; /* Köşeleri yuvarlar */
-    font-size: 14px; /* Yazı boyutu */
-    outline: none; /* Tıklanınca mavi çerçeveyi kaldırır */
-    background-color: #fff; /* Beyaz arka plan */
-    cursor: pointer; /* El işareti */
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-/* Filtreye tıklanınca yeşil çerçeve */
 .filter-select:focus {
-    border-color: #1D9E75; /* Yeşil çerçeve */
+    border-color: #1D9E75;
+}
+
+/* ==================== DETAY SAYFASI ==================== */
+.detail-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #1D9E75;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.detail-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.detail-card h1 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+.detail-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.detail-meta span {
+    font-size: 13px;
+    color: #888;
+    background: #f5f5f5;
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+.detail-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.btn-download {
+    display: inline-block;
+    background-color: #1D9E75;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn-download:hover {
+    background-color: #0F6E56;
+}
+
+.loading-text {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Kart link sarmalayıcı */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover .card {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    transition: all 0.2s;
+}
+
+/* ==================== ADMIN PANELİ ==================== */
+.admin-badge {
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.admin-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+}
+
+.admin-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.admin-table th {
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f5f5f5;
+    color: #555;
+}
+
+.admin-table tr:hover td {
+    background-color: #fafafa;
+}
+
+/* Silme butonu */
+.btn-delete {
+    background-color: #fee2e2;
+    color: #e74c3c;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-delete:hover {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* ==================== DASHBOARD ARKA PLAN SLIDESHOW ==================== */
+#bgSlideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: opacity 1.5s ease-in-out;
+    filter: saturate(1.2) contrast(1.1); /* Renkleri canlandırır */
+}
+
+body.has-bg {
+    background: transparent;
+}
+
+/* Dashboard başlık kutusu - sağa yaslı, şeffaf beyaz */
+body.has-bg .dashboard-header {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 20px 30px;
+    border-radius: 12px;
+    margin: 20px 40px 20px auto;
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    text-align: right;
+}
+
+body.has-bg .dashboard-header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+body.has-bg .dashboard-header p {
+    font-size: 14px;
+}
+
+body.has-bg .stats-section {
+    margin: 0 40px 20px auto;
+    max-width: 450px;
+}
+
+body.has-bg .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+body.has-bg .stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+body.has-bg .stat-label {
+    font-size: 12px;
+}
+
+body.has-bg .stat-number {
+    font-size: 20px;
+}
+
+body.has-bg .resources-section {
+    margin: 0 40px 20px auto;
+    max-width: 450px;
+}
+
+body.has-bg .resources-section .section-header {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+body.has-bg .resources-section h2 {
+    font-size: 18px;
+}
+
+body.has-bg .card {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+body.has-bg .cards-grid {
+    grid-template-columns: 1fr;
+}
+
+body.has-bg .navbar {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ==================== MATERIALS MENU - GÜZEL KATEGORİ KARTLARI ==================== */
+.category-section {
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* Büyük kategori kartları - gradient ve animasyonlu */
+.category-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 24px;
+    padding: 70px 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+/* Üst renkli şerit - hover'da genişler */
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.category-notes::before { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.category-exams::before { background: linear-gradient(90deg, #f59e0b, #eab308); }
+
+.category-card:hover::before {
+    transform: scaleX(1);
+}
+
+.category-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+.category-notes:hover { border-color: #16a34a; }
+.category-exams:hover { border-color: #f59e0b; }
+
+/* Büyük ikon - hover'da döner */
+.category-icon {
+    font-size: 72px;
+    margin-bottom: 24px;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.15) rotate(-8deg);
+}
+
+.category-card h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.category-notes h2 { color: #16a34a; }
+.category-exams h2 { color: #f59e0b; }
+
+.category-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .category-grid { grid-template-columns: 1fr; gap: 20px; }
+    .category-card { padding: 50px 30px; }
+}
+
+/* ==================== RESOURCES SAYFASI - GÜZEL KARTLAR ==================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+}
+
+/* Materyal kartı */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Sol kenar renkli şerit - türe göre */
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 16px 0 0 16px;
+}
+
+.card[data-type="notes"]::before  { background: #16a34a; }
+.card[data-type="exam"]::before   { background: #f59e0b; }
+.card[data-type="slides"]::before { background: #3b82f6; }
+.card[data-type="book"]::before   { background: #ec4899; }
+
+.card[data-type="notes"]:hover  { border-color: #16a34a; }
+.card[data-type="exam"]:hover   { border-color: #f59e0b; }
+.card[data-type="slides"]:hover { border-color: #3b82f6; }
+.card[data-type="book"]:hover   { border-color: #ec4899; }
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 12px 0 6px;
+    line-height: 1.3;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+/* Badge - yuvarlak etiketler */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.badge-notes  { background: #dcfce7; color: #166534; }
+.badge-exam   { background: #fef3c7; color: #92400e; }
+.badge-slides { background: #dbeafe; color: #1e40af; }
+.badge-book   { background: #fce7f3; color: #9d174d; }
+
+/* Kart footer - yükleyen ve tarih */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.card-footer span:first-child {
+    font-weight: 600;
+    color: #16a34a;
+}
+
+/* Arama kutusu - modern */
+#searchInput {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #16a34a;
+}
+
+#filterType {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+
+#filterType:focus {
+    outline: none;
+    border-color: #16a34a;
+}
+/* ==================== HOŞ GELDİN SAYFASI - Tab'lı Login/Register ==================== */
+.welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.welcome-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.welcome-card h1 {
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.welcome-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+/* Tab butonları - Giriş Yap / Kaydol */
+.tab-buttons {
+    display: flex;
+    gap: 8px;
+    background: #f3f4f6;
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 28px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background: #1D9E75;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(29,158,117,0.3);
+}
+
+.tab-btn:not(.active):hover {
+    color: #1D9E75;
+}
+
+.welcome-card .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.welcome-card .form-group select:focus {
+    border-color: #1D9E75;
 }

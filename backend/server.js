@@ -15,6 +15,12 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/resources', resourceRoutes);
 
+const adminRoutes = require('./routes/admin'); /* Admin route dosyasını bağlar */
+app.use('/api/admin', adminRoutes); /* Admin endpoint'lerini tanımlar */
+
+const commentsRoutes = require('./routes/comments'); /* Yorumlar route dosyasını bağlar */
+app.use('/api/comments', commentsRoutes); /* Yorum endpoint'lerini tanımlar */
+
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', message: 'IBU Study Hub API is running' });

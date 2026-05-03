@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- Tarayıcıya bunun HTML5 dosyası olduğunu söyler -->
+<html lang="en"> <!-- Sayfa dilini İngilizce olarak ayarlar -->
+<head>
+    <meta charset="UTF-8"> <!-- Özel karakterlerin düzgün görünmesi için -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobilde düzgün görünsün diye -->
+    <title>Study Hub | Resource Detail</title> <!-- Tarayıcı sekmesinde görünen başlık -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Ortak style.css dosyasını bağlar -->
+</head>
+<body> <!-- Sayfada görünen her şey body içine yazılır -->
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Study Hub</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="index.html" class="btn-logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- DETAY SAYFASI - Materyal detaylarını gösterir -->
+    <section class="detail-section"> <!-- Detay bölümü -->
+
+        <!-- Geri dön butonu -->
+        <a href="resources.html" class="back-btn">← Back to Resources</a> <!-- Kaynaklar sayfasına döner -->
+
+        <!-- Materyal detay kartı -->
+        <div class="detail-card" id="detailCard"> <!-- jQuery ile doldurulacak -->
+
+            <!-- Yükleniyor mesajı - jQuery veriyi çekene kadar görünür -->
+            <p class="loading-text">Loading...</p>
+
+        </div>
+
+    </section>
+
+    <!-- SCRIPTLER -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <!-- jQuery kütüphanesi -->
+    <script src="js/main.js"></script> <!-- Kendi JS dosyamız -->
+</body>
+</html>

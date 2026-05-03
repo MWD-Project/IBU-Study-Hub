@@ -1,8 +1,7 @@
 const jwt = require('jsonwebtoken');
+const db = require('../config/db');
 
-// Korumalı route'lara erişim için token doğrulama
-module.exports = (req, res, next) => {
-    // Header'dan token'ı alır: "Bearer <token>"
+module.exports = async (req, res, next) => {
     const authHeader = req.headers.authorization;
     const token = authHeader && authHeader.split(' ')[1];
 
@@ -11,10 +10,17 @@ module.exports = (req, res, next) => {
     }
 
     try {
-        // Token'ı çözer ve kullanıcı bilgilerini req.user'a ekler
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded;
-        next(); // Bir sonraki middleware/controller'a geç
+        
+        /* Veritabanından güncel kullanıcı bilgisini çeker - role değişikliklerini yansıtır */
+        const [rows] = await db.query('SELECT id, fullname, email, role FROM users WHERE id = ?', [decoded.id]);
+        
+        if (rows.length === 0) {
+            return res.status(401).json({ message: 'Kullanıcı bulunamadı.' });
+        }
+        
+        req.user = rows[0]; /* Güncel kullanıcı bilgisini req.user'a ekler */
+        next();
     } catch (err) {
         return res.status(401).json({ message: 'Geçersiz veya süresi dolmuş token.' });
     }

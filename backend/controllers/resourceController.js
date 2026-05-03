@@ -1,10 +1,9 @@
 const db = require('../config/db');
 
-// GET /api/resources?search=...&type=...
+// GET /api/resources?search=...&type=...&university=...
 const getResources = async (req, res) => {
-    const { search, type } = req.query;
+    const { search, type, university } = req.query; /* University filtresi de query'den alınır */
 
-    // Temel sorgu - kullanıcı adını da çekiyoruz
     let query = `
         SELECT 
             m.id,
@@ -14,15 +13,17 @@ const getResources = async (req, res) => {
             m.type,
             m.description,
             m.file_url,
+            m.university,
             m.created_at,
-            u.fullname AS uploader
+            u.fullname AS uploader,
+            u.email AS uploader_email
         FROM materials m
         JOIN users u ON m.user_id = u.id
         WHERE 1=1
     `;
     const params = [];
 
-    // Arama filtresi (başlık, ders kodu veya hoca adında arar)
+    // Arama filtresi
     if (search) {
         query += ' AND (m.title LIKE ? OR m.course_code LIKE ? OR m.professor LIKE ?)';
         params.push(`%${search}%`, `%${search}%`, `%${search}%`);
@@ -32,6 +33,12 @@ const getResources = async (req, res) => {
     if (type && type !== 'all') {
         query += ' AND m.type = ?';
         params.push(type);
+    }
+
+    /* Üniversite filtresi - sadece belirli üniversitenin materyallerini getirir */
+    if (university) {
+        query += ' AND m.university = ?';
+        params.push(university);
     }
 
     query += ' ORDER BY m.created_at DESC';
@@ -45,30 +52,35 @@ const getResources = async (req, res) => {
     }
 };
 
-// POST /api/resources/upload  (auth gerekli + dosya gerekli)
+// POST /api/resources/upload
 const uploadResource = async (req, res) => {
     const { title, courseCode, professor, type, description } = req.body;
 
-    // Zorunlu alan kontrolü
     if (!title || !courseCode || !type) {
         return res.status(400).json({ message: 'Başlık, ders kodu ve tür zorunludur.' });
     }
 
-    // Dosya yüklendi mi?
     if (!req.file) {
         return res.status(400).json({ message: 'Lütfen bir dosya seçin.' });
     }
 
     try {
-        // Cloudinary'den gelen dosya URL'si ve ID'si
         const fileUrl = req.file.path;
         const filePublicId = req.file.filename;
 
+        /* Kullanıcının üniversitesini veritabanından çeker */
+        const [userRows] = await db.query(
+            'SELECT university FROM users WHERE id = ?',
+            [req.user.id]
+        );
+        const userUniversity = userRows[0]?.university || 'IBU';
+
+        /* Materyale user'ın üniversitesi otomatik eklenir */
         await db.query(
             `INSERT INTO materials 
-                (user_id, title, course_code, professor, type, description, file_url, file_public_id) 
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-            [req.user.id, title, courseCode, professor || null, type, description || null, fileUrl, filePublicId]
+                (user_id, title, course_code, professor, type, description, file_url, file_public_id, university) 
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [req.user.id, title, courseCode, professor || null, type, description || null, fileUrl, filePublicId, userUniversity]
         );
 
         res.status(201).json({ message: 'Materyal başarıyla yüklendi.' });
@@ -79,33 +91,58 @@ const uploadResource = async (req, res) => {
     }
 };
 
-// GET /api/resources/dashboard  (auth gerekli)
+// GET /api/resources/dashboard
 const getDashboard = async (req, res) => {
     try {
-        // Toplam materyal sayısı
+        /* Kullanıcının üniversitesini çeker */
+        const [userRows] = await db.query(
+            'SELECT university FROM users WHERE id = ?',
+            [req.user.id]
+        );
+        const userUniversity = userRows[0]?.university || 'IBU';
+
+        /* Sadece aynı üniversitenin toplam materyal sayısı */
         const [[totalRow]] = await db.query(
-            'SELECT COUNT(*) AS total FROM materials'
+            'SELECT COUNT(*) AS total FROM materials WHERE university = ?',
+            [userUniversity]
         );
 
-        // Bu kullanıcının yüklediği materyal sayısı
+        /* Bu kullanıcının yüklediği materyal sayısı */
         const [[myRow]] = await db.query(
             'SELECT COUNT(*) AS total FROM materials WHERE user_id = ?',
             [req.user.id]
         );
 
-        // Son 4 materyal
+        /* Aynı üniversitedeki toplam Notes sayısı */
+        const [[notesRow]] = await db.query(
+            "SELECT COUNT(*) AS total FROM materials WHERE university = ? AND type = 'notes'",
+            [userUniversity]
+        );
+
+        /* Aynı üniversitedeki toplam Past Exam sayısı */
+        const [[examsRow]] = await db.query(
+            "SELECT COUNT(*) AS total FROM materials WHERE university = ? AND type = 'exam'",
+            [userUniversity]
+        );
+
+        /* Aynı üniversitenin son 4 materyali */
         const [recent] = await db.query(
             `SELECT m.*, u.fullname AS uploader
              FROM materials m
              JOIN users u ON m.user_id = u.id
+             WHERE m.university = ?
              ORDER BY m.created_at DESC
-             LIMIT 4`
+             LIMIT 4`,
+            [userUniversity]
         );
 
         res.json({
             totalMaterials: totalRow.total,
             myUploads: myRow.total,
-            recentMaterials: recent
+            totalNotes: notesRow.total,
+            totalExams: examsRow.total,
+            recentMaterials: recent,
+            university: userUniversity
         });
 
     } catch (err) {
