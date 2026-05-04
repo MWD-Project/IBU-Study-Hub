@@ -963,3 +963,150 @@ body.has-bg .navbar {
 .welcome-card .form-group select:focus {
     border-color: #1D9E75;
 }
+/* ==================== RESPONSIVE DESIGN - MOBİL UYUM ==================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar - hamburger yerine üst üste */
+    .navbar {
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    /* Dashboard - sağa yaslı kutular tam genişlik */
+    body.has-bg .dashboard-header {
+        margin: 10px 20px;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    body.has-bg .stats-section {
+        margin: 0 20px 10px;
+        max-width: 100%;
+    }
+
+    body.has-bg .resources-section {
+        margin: 0 20px 10px;
+        max-width: 100%;
+    }
+
+    /* Stats grid - 2 sütun */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Cards grid - tek sütun */
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Resources header */
+    .resources-header {
+        padding: 20px 20px 10px;
+    }
+
+    .search-filter-section {
+        padding: 10px 20px;
+    }
+
+    .search-filter-bar {
+        flex-direction: column;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+
+    /* Resources section */
+    .resources-section {
+        padding: 20px;
+    }
+
+    /* Upload card */
+    .upload-card {
+        padding: 24px 20px;
+    }
+
+    /* Auth card */
+    .auth-card {
+        padding: 24px 20px;
+    }
+
+    /* Welcome card */
+    .welcome-card {
+        padding: 32px 20px;
+    }
+
+    /* Category grid - tek sütun */
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .category-card {
+        padding: 40px 24px;
+    }
+
+    .category-icon {
+        font-size: 48px;
+    }
+
+    .category-card h2 {
+        font-size: 24px;
+    }
+
+    /* Admin section */
+    .admin-section {
+        padding: 0 20px 20px;
+    }
+
+    .admin-table {
+        font-size: 12px;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Çok küçük ekranlar - telefon */
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+    .stat-number {
+        font-size: 22px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    .tab-btn {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
